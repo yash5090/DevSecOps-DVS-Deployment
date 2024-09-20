@@ -27,7 +27,7 @@ pipeline {
         
         stage('Checkout from Git') {                        
             steps {                                       
-                git branch: 'main', url: 'https://github.com/yash509/DevSecOps-DVS-Deployment.git'
+                git branch: 'main', url: 'https://github.com/yash5090/DevSecOps-DVS-Deployment.git'
             }
         }
         
