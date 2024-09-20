@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: dble-vert-sldr-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: dble-vert-sldr
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: dble-vert-sldr
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: dble-vert-sldr

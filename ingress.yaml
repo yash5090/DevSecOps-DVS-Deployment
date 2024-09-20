@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dble-vert-sldr-ingress
+spec:
+  rules:
+  - host: dble-vert-sldr
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dble-vert-sldr-service
+            port:
+              number: 5000 #80
+      - path: /app
+        pathType: Prefix
+        backend:
+          service:
+            name: dble-vert-sldr-service
+            port:
+              number: 5000 #80

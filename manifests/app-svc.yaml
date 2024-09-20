@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dble-vert-sldr-service
+spec:
+  selector:
+    app: dble-vert-sldr
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: LoadBalancer
